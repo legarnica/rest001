@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>	
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,6 +39,15 @@
 							<th>quote</th>
 						</tr>
 					</thead>
+					
+					<c:forEach var="cita" items="${citas}">
+						<tr>
+							<td>${cita.type}</td>
+							<td>${cita.value.id}</td>
+							<td>${cita.value.quote}</td>
+						</tr>
+					</c:forEach>
+					
 					<tfoot>
 						<tr>
 							<th>type</th>
